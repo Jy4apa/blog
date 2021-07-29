@@ -17,17 +17,6 @@ class Article(models.Model):
         verbose_name = 'Статья'
 
 
-class CommentQuerySet(models.query.QuerySet):
-    def get(self, **kwargs):
-        comment = super().get(**kwargs)
-        comment['children'] = comment.get_children()
-        return comment
-
-
-class CommentManager(models.Manager.from_queryset(CommentQuerySet)):
-    pass
-
-
 class Comment(NS_Node):
     id = models.AutoField(primary_key=True)
     description = models.TextField(verbose_name='Описание')
