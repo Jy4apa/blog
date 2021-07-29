@@ -1,0 +1,54 @@
+### List articles
+GET http://0.0.0.0:8000/articles/
+
+### Create article
+POST http://0.0.0.0:8000/articles/
+Content-Type: application/json
+
+{
+  "name": "test_article",
+  "description": "some description"
+}
+
+### Get article
+GET http://0.0.0.0:8000/articles/1/
+
+### Update article
+PUT http://0.0.0.0:8000/articles/1/
+Content-Type: application/json
+
+{
+  "name": "new name",
+  "description": "new description"
+}
+
+### Delete article
+DELETE http://0.0.0.0:8000/articles/1/
+
+### List comments
+GET http://0.0.0.0:8000/comments/
+
+### Create comment
+POST http://0.0.0.0:8000/comments/
+Content-Type: application/json
+
+{
+  "description": "comment",
+  "article": 1
+}
+
+### Get comment
+GET http://0.0.0.0:8000/comments/1/
+
+### Update comment
+PUT http://0.0.0.0:8000/comments/1/
+Content-Type: application/json
+
+{
+  "description": "new comment",
+  "article": 1,
+  "parent_id": 1
+}
+
+### Delete comment
+DELETE http://0.0.0.0:8000/comments/1/
